@@ -6,10 +6,19 @@
 $ping_grezzi = [45, 120, -1, 32, 210, 85, -1, 18, 95, 310, 45, 60, -1, 150, 28, 240,
 18, 72];
 
-array_push($ping_grezzi, 55, 190, 12);
-
+//variabili
+$somma = 0;
+$count = 0;
+$MAX = 0;
+$MIN = 0;
+$ping_critici = [];
+$ping_Unici = [];
 $ping_validi = [];
 $pacchetti_persi = 0;
+
+//aggiunta array $ping_grezzi
+array_push($ping_grezzi, 55, 190, 12);
+
 
 for ($i = 0; $i < count($ping_grezzi); $i++){
     if($i == -1){
@@ -19,11 +28,7 @@ for ($i = 0; $i < count($ping_grezzi); $i++){
     }
 }
 
-$somma = 0;
-$count = 0;
-$MAX = 0;
-$MIN = 0;
-$ping_critici = [];
+
 
 for($i = 0; $i < count($ping_grezzi); $i++){
     $somma += $ping_grezzi[$i];
@@ -37,5 +42,8 @@ for($i = 0; $i < count($ping_grezzi); $i++){
     $count ++;
 }
 $media = $somma / $count;
+
+$ping_Unici[] = array_unique($ping_validi);
+$ping_ordinati = array_merge($ping_validi);
 
 ?>
