@@ -18,4 +18,24 @@ for ($i = 0; $i < count($ping_grezzi); $i++){
         $ping_validi[] = $i;
     }
 }
+
+$somma = 0;
+$count = 0;
+$MAX = 0;
+$MIN = 0;
+$ping_critici = [];
+
+for($i = 0; $i < count($ping_grezzi); $i++){
+    $somma += $ping_grezzi[$i];
+    if($ping_grezzi[$i] > $MAX){
+        $MAX = $ping_grezzi[$i];
+    }else if($ping_grezzi[$i] < $MIN){
+        $MIN = $ping_grezzi[$i];
+    }else if($ping_grezzi[$i] >= 150){
+        $ping_critici[] = $i;
+    }
+    $count ++;
+}
+$media = $somma / $count;
+
 ?>
