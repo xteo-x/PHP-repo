@@ -70,7 +70,16 @@ function calcoloMinMax($ping_validi, &$Min, &$Max) {
         }
     }
 }
+// restituisce un array con ping superiore a 150
+function calcolaValori_Critici($ping_validi){
+    $valoriCritici = array();
 
+    foreach($ping_validi as $ping) {
+        if($ping > 150) {
+            array_push($valoriCritici, $ping);
+        }
+    }
+}
 
 
 
