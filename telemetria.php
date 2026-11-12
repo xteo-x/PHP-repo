@@ -32,6 +32,17 @@ function contaPacchetti_persi($pacchetti_persi) {
 }
 $pacchetti_persi = contaPacchetti_persi($pacchetti_persi);
 
+//contaPacchetti_persi accetta un array e restituisce il numero di pac. NON persi
+function contaPacchetti_validi($ping_grezzi) {
+    $ping_validi = array();
+
+    foreach($ping_grezzi as $ping) {
+        if($ping >0) {
+            array_push($ping_validi, $ping);
+        }
+    }
+}
+
 
 
 /*for ($i = 0; $i < count($ping_grezzi); $i++){
