@@ -6,6 +6,9 @@
 $ping_grezzi = [45, 120, -1, 32, 210, 85, -1, 18, 95, 310, 45, 60, -1, 150, 28, 240,
 18, 72];
 
+//aggiunta array $ping_grezzi
+array_push($ping_grezzi, 55, 190, 12);
+
 //variabili
 $somma = 0;
 $count = 0;
@@ -16,17 +19,28 @@ $ping_Unici = [];
 $ping_validi = [];
 $pacchetti_persi = 0;
 
-//aggiunta array $ping_grezzi
-array_push($ping_grezzi, 55, 190, 12);
+//contaPacchetti_persi accetta un array e restituisce il numero di pac. persi
+function contaPacchetti_persi($pacchetti_persi) {
+    $pacchetti_persi = 0;
+    return $pacchetti_persi;
+
+    foreach($ping_grezzi as $ping) {
+        if($ping == -1) {
+            $pacchetti_persi;
+        }
+    }
+}
+$pacchetti_persi = contaPacchetti_persi($pacchetti_persi);
 
 
-for ($i = 0; $i < count($ping_grezzi); $i++){
+
+/*for ($i = 0; $i < count($ping_grezzi); $i++){
     if($i == -1){
         $pacchetti_persi += 1;
     }else if($i > 0){
         $ping_validi[] = $i;
     }
-}
+}*/
 
 
 
