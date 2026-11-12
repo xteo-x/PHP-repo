@@ -57,6 +57,20 @@ function tempoMedio_risposta($ping_validi){
     return round($tempoMedio,2);
 }
 
+function calcoloMinMax($ping_validi, &$Min, &$Max) {
+    $Min = $ping_validi[0];
+    $Max = $ping_validi[0];
+
+    foreach($ping_validi as $ping) {
+        if ($ping > $Max ) {
+            $Max = $ping;
+        }if( $ping < $Min ) {
+            $Min = $ping;
+        
+        }
+    }
+}
+
 
 
 
@@ -70,7 +84,7 @@ function tempoMedio_risposta($ping_validi){
 
 
 
-for($i = 0; $i < count($ping_grezzi); $i++){
+/*for($i = 0; $i < count($ping_grezzi); $i++){
     $somma += $ping_grezzi[$i];
     if($ping_grezzi[$i] > $MAX){
         $MAX = $ping_grezzi[$i];
@@ -84,6 +98,6 @@ for($i = 0; $i < count($ping_grezzi); $i++){
 $media = $somma / $count;
 
 $ping_Unici[] = array_unique($ping_validi);
-$ping_ordinati = array_merge($ping_validi);
+$ping_ordinati = array_merge($ping_validi);*/
 
 ?>
