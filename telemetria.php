@@ -43,6 +43,21 @@ function contaPacchetti_validi($ping_grezzi) {
     }
 }
 
+//calcola il ping medio dato da un array
+function tempoMedio_risposta($ping_validi){
+    $tempoMedio = 0;
+    $somma = 0;
+    $count = 0;
+
+    foreach($ping_validi as $ping) {
+        $count++;
+        $somma += $ping;
+    }
+    $tempoMedio = $somma / $count;
+    return round($tempoMedio,2);
+}
+
+
 
 
 /*for ($i = 0; $i < count($ping_grezzi); $i++){
